@@ -51,6 +51,18 @@ public enum JudgeProperty {
             new boolean[]{true, true, true, true, true, false },
             JudgeWindowRule.NORMAL
 			),
+
+    SEVENHARD(new long[][]{ {-18000, 18000}, {-40000, 40000}, {-120000, 120000}, {-280000, 220000}, {-150000, 500000} },
+            new long[][]{ {-20000, 20000}, {-50000, 50000}, {-150000, 150000}, {-290000, 230000}, {-160000, 500000}},
+            new long[][]{ {-96000, 96000}, {-120000, 120000}, {-200000, 200000}, {-280000, 220000}},
+            0,
+            new long[][]{ {-130000, 130000}, {-170000, 170000}, {-210000, 210000}, {-290000, 230000}},
+            0,
+            new boolean[]{true, true, true, false, false, true },
+            MissCondition.ALWAYS,
+            new boolean[]{true, true, true, true, true, false },
+            JudgeWindowRule.NARROW
+            ),
 	;
 
     /**
@@ -154,7 +166,8 @@ public enum JudgeProperty {
     
     public enum JudgeWindowRule {
     	NORMAL (new int[]{25, 50, 75, 100, 125}, new boolean[]{false, false, false, false, true}),
-    	PMS (new int[]{33, 50, 70, 100, 133}, new boolean[]{true, false, false, true, true});
+    	PMS (new int[]{33, 50, 70, 100, 133}, new boolean[]{true, false, false, true, true}),
+        NARROW (new int[]{25, 50, 80, 100, 150}, new boolean[]{false, false, false, false, true});
     	
     	/**
     	 * JUDGERANKの倍率(VERYHARD, HARD, NORMAL, EASY, VERYEASY)

@@ -1,12 +1,16 @@
+/bgm/*
 /build/*
 /player/*
 /skin/*
-!/skin/default/
+/jre/*
+/skin/*
 /practice/*
 /screenshot/*
 /table/*
 /course/*
 /favorite/*
+/lib/javafx*
+/sound/*
 songdata.db
 songinfo.db
 config.json
@@ -19,3 +23,4 @@ b.bat
 *.cim
 .idea/
 .DS_Store
+launch4j.xml.tmp
