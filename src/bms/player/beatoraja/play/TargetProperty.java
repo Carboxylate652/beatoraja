@@ -106,10 +106,11 @@ class StaticTargetProperty extends TargetProperty {
 
     @Override
     public ScoreData getTarget(MainController main) {
-    	int rivalscore = (int)Math.ceil(main.getPlayerResource().getBMSModel().getTotalNotes() * 2 * rate / 100f);
+    	int rivalscore = (int)Math.ceil(main.getPlayerResource().getBMSModel().getTotalNotes() * 5 * rate / 100f);
 		targetScore.setPlayer(getName(main));
-		targetScore.setEpg(rivalscore / 2);
-		targetScore.setEgr(rivalscore % 2);
+		targetScore.setEpg(rivalscore / 5);
+		targetScore.setEgr((rivalscore % 5) / 3);
+		targetScore.setEgd((rivalscore % 5) % 3);
         return targetScore;
     }
     
@@ -230,6 +231,8 @@ class RivalTargetProperty extends TargetProperty {
     		targetScore.setLpg(score.getLpg());
     		targetScore.setEgr(score.getEgr());
     		targetScore.setLgr(score.getLgr());
+			targetScore.setEgd(score.getEgd());
+			targetScore.setLgd(score.getLgd());
     		targetScore.setOption(score.getOption());
     	} else if(name != null) {
     		targetScore.setPlayer("NO DATA");
@@ -314,7 +317,7 @@ class NextRankTargetProperty extends TargetProperty {
         ScoreData now = main.getPlayDataAccessor().readScoreData(main.getPlayerResource().getBMSModel()
                 , main.getPlayerConfig().getLnmode());
         final int nowscore = now != null ? now.getExscore() : 0;
-        final int max = main.getPlayerResource().getBMSModel().getTotalNotes() * 2;
+        final int max = main.getPlayerResource().getBMSModel().getTotalNotes() * 5;
         int targetscore = max;
         for(int i = 15;i < 27;i++) {
             int target = (int)Math.ceil(max * i / 27f);
@@ -324,8 +327,9 @@ class NextRankTargetProperty extends TargetProperty {
             }
         }
 		targetScore.setPlayer(getName(main));
-		targetScore.setEpg(targetscore / 2);
-		targetScore.setEgr(targetscore % 2);
+		targetScore.setEpg(targetscore / 5);
+		targetScore.setEgr((targetscore % 5) / 3);
+		targetScore.setEgd((targetscore % 5) % 3);
         return targetScore;
 
     }
@@ -376,8 +380,9 @@ class InternetRankingTargetProperty extends TargetProperty {
     			final IRScoreData irScore = ranking.getScore(index);
     			final int targetscore = irScore.getExscore();
     			targetScore.setPlayer(irScore.player.length() > 0 ? irScore.player : "YOU");
-        		targetScore.setEpg(targetscore / 2);
-        		targetScore.setEgr(targetscore % 2);
+        		targetScore.setEpg(targetscore / 5);
+        		targetScore.setEgr((targetscore % 5) / 3);
+				targetScore.setEgd((targetscore % 5) % 3);
 				targetScore.setOption(irScore.option);
     		} else {
     			targetScore.setPlayer("NO DATA");
@@ -399,8 +404,9 @@ class InternetRankingTargetProperty extends TargetProperty {
 	    			final IRScoreData irScore = ranking.getScore(index);
 	    			final int targetscore = irScore.getExscore();
 	    			targetScore.setPlayer(irScore.player.length() > 0 ? irScore.player : "YOU");
-	        		targetScore.setEpg(targetscore / 2);
-	        		targetScore.setEgr(targetscore % 2);
+	        		targetScore.setEpg(targetscore / 5);
+	        		targetScore.setEgr((targetscore % 5) / 3);
+					targetScore.setEgd((targetscore % 5) % 3);
 	    			targetScore.setOption(irScore.option);
 	    		} else {
 	    			targetScore.setPlayer("NO DATA");

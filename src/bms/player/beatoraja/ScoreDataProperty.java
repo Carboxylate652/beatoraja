@@ -56,7 +56,7 @@ public class ScoreDataProperty {
         final int totalnotes = rival != null ? rival.getNotes() : 0;
 
         rivalscore = exscore;
-        rivalscorerate = totalnotes == 0 ? 1.0f : ((float)exscore) / (totalnotes * 2);
+        rivalscorerate = totalnotes == 0 ? 1.0f : ((float)exscore) / (totalnotes * 5);
         rivalrateInt = (int)(rivalscorerate * 100);
         rivalrateAfterDot = ((int)(rivalscorerate * 10000)) % 100;
     }
@@ -74,8 +74,8 @@ public class ScoreDataProperty {
                     break;
                 case BEAT_7K:
                 case BEAT_14K:
-                    nowpoint = (int)(((long)150000 * score.getJudgeCount(0) + 100000 * score.getJudgeCount(1) + 20000 * score.getJudgeCount(2))
-                            / totalnotes) + (int)((long)50000 * score.getCombo() / totalnotes);
+                    nowpoint = (int)(((long)200000 * score.getJudgeCount(0) + 120000 * score.getJudgeCount(1) + 40000 * score.getJudgeCount(2))
+                            / totalnotes) + score.getCombo();
                     break;
                 case POPN_5K:
                 case POPN_9K:
@@ -91,21 +91,21 @@ public class ScoreDataProperty {
             nowpoint = 0;
         }
         nowscore = exscore;
-        rate = totalnotes == 0 ? 1.0f : ((float)exscore) / (totalnotes * 2);
+        rate = totalnotes == 0 ? 1.0f : ((float)exscore) / (totalnotes * 5);
         rateInt = (int)(rate * 100);
         rateAfterDot = ((int)(rate * 10000)) % 100;
-        nowrate = notes == 0 ? 1.0f : ((float)exscore) / (notes * 2);
+        nowrate = notes == 0 ? 1.0f : ((float)exscore) / (notes * 5);
         nowrateInt = (int)(nowrate * 100);
         nowrateAfterDot = ((int)(nowrate * 10000)) % 100;
         nextrank = Integer.MIN_VALUE;
         for(int i = 0;i < rank.length;i++) {
             rank[i] = totalnotes != 0 && rate >= 1f * i / rank.length;
             if(i % 3 == 0 && !rank[i] && nextrank == Integer.MIN_VALUE) {
-                nextrank = (int)Math.ceil((i * (notes * 2) / (double)rank.length) - rate * (notes * 2));
+                nextrank = (int)Math.ceil((i * (notes * 5) / (double)rank.length) - rate * (notes * 5));
             }
         }
         if(nextrank == Integer.MIN_VALUE) {
-            nextrank = (notes * 2) - exscore;
+            nextrank = (notes * 5) - exscore;
         }
         for(int i = 0;i < nowrank.length;i++) {
             nowrank[i] = totalnotes != 0 && nowrate >= 1f * i / nowrank.length;
@@ -115,27 +115,29 @@ public class ScoreDataProperty {
             for (int i=previousNotes; i<notes; i++) {
                 nowbestscore += getExScore(bestGhost[i]);
             }
-            nowbestscorerate = totalnotes == 0 ? 0 : (float) nowbestscore / (totalnotes * 2);
+            nowbestscorerate = totalnotes == 0 ? 0 : (float) nowbestscore / (totalnotes * 5);
         } else {
             nowbestscore = totalnotes == 0 ? 0 : bestscore * notes / totalnotes;
-            nowbestscorerate= totalnotes == 0 ? 0 : (float) (bestscore) * notes / (totalnotes * totalnotes * 2);
+            nowbestscorerate= totalnotes == 0 ? 0 : (float) (bestscore) * notes / (totalnotes * totalnotes * 5);
         }
         if (useRivalGhost) {
             for (int i=previousNotes; i<notes; i++) {
                 nowrivalscore += getExScore(rivalGhost[i]);
             }
-            nowrivalscorerate = totalnotes == 0 ? 0 : (float) nowrivalscore / (totalnotes * 2);
+            nowrivalscorerate = totalnotes == 0 ? 0 : (float) nowrivalscore / (totalnotes * 5);
         } else {
             nowrivalscore = totalnotes == 0 ? 0 : rivalscore * notes / totalnotes;
-            nowrivalscorerate= totalnotes == 0 ? 0 : (float) (rivalscore) * notes / (totalnotes * totalnotes * 2);
+            nowrivalscorerate= totalnotes == 0 ? 0 : (float) (rivalscore) * notes / (totalnotes * totalnotes * 5);
         }
         previousNotes = notes;
     }
 
     private int getExScore(int judge) {
         if (judge == 0) {
-            return 2;
+            return 5;
         } else if (judge == 1) {
+            return 3;
+        } else if (judge == 2) {
             return 1;
         }
         return 0;
@@ -143,7 +145,7 @@ public class ScoreDataProperty {
     
     public void updateTargetScore(int rivalscore) {
     	this.rivalscore = rivalscore;
-        rivalscorerate = ((float)rivalscore)  / (totalnotes * 2);
+        rivalscorerate = ((float)rivalscore)  / (totalnotes * 5);
         rivalrateInt = (int)(rivalscorerate * 100);
         rivalrateAfterDot = ((int)(rivalscorerate * 10000)) % 100;
     }
@@ -158,10 +160,10 @@ public class ScoreDataProperty {
         this.rivalscore = rivalscore;
         this.rivalGhost = rivalGhost;
         this.totalnotes = totalnotes;
-        bestscorerate= ((float)bestscore)  / (totalnotes * 2);
+        bestscorerate= ((float)bestscore)  / (totalnotes * 5);
         bestrateInt = (int)(bestscorerate * 100);
         bestrateAfterDot = ((int)(bestscorerate * 10000)) % 100;
-        rivalscorerate= ((float)rivalscore)  / (totalnotes * 2);
+        rivalscorerate= ((float)rivalscore)  / (totalnotes * 5);
         for(int i = 0;i < bestrank.length;i++) {
             bestrank[i] = bestscorerate >= 1f * i / bestrank.length;
         }

@@ -114,9 +114,9 @@ public enum GaugeProperty {
         EXCLASS_KB(null ,0 ,100 ,100, 0, new float[]{0.2f, 0.2f, 0.1f, -3.0f, -6.0f, -3.0f}, new float[][]{}),
         EXHARDCLASS_KB(null ,0 ,100 ,100, 0, new float[]{0.2f, 0.1f, 0, -5.0f, -10.0f, -5.0f}, new float[][]{}),
 
-        ASSIST_EASY_LR2(TOTAL ,2 ,100 ,20, 60, new float[]{1.2f, 1.2f, 0.6f, -3.2f, -4.8f, -1.6f}, new float[][]{}),
-        EASY_LR2(TOTAL ,2 ,100 ,20, 80, new float[]{1.2f, 1.2f, 0.6f, -3.2f, -4.8f, -1.6f}, new float[][]{}),
-        NORMAL_LR2(TOTAL ,2 ,100 ,20, 80, new float[]{1.0f, 1.0f, 0.5f, -4.0f, -6.0f, -2.0f}, new float[][]{}),
+        ASSIST_EASY_LR2(TOTAL ,2 ,100 ,20, 60, new float[]{1.0f, 1.0f, 0.5f, -1.5f, -3.0f, -0.5f}, new float[][]{}),
+        EASY_LR2(TOTAL ,0 ,100 ,20, 80, new float[]{1.0f, 1.0f, 0.5f, -1.5f, -4.5f, -1.0f}, new float[][]{}),
+        NORMAL_LR2(TOTAL ,0 ,100 ,20, 80, new float[]{1.0f, 1.0f, 0.5f, -3.0f, -6.0f, -2.0f}, new float[][]{}),
         HARD_LR2(LIMIT_INCREMENT ,0 ,100 ,100, 0, new float[]{0.15f, 0.12f, 0f, -5.0f, -9.0f, -5.0f}, new float[][]{{30, 0.5f}}),
         EXHARD_LR2(LIMIT_INCREMENT ,0 ,100 ,100, 0, new float[]{0.15f, 0.06f, 0f, -10.0f, -18.0f, -10.0f}, new float[][]{}),
         HAZARD_LR2(null ,0 ,100 ,100, 0, new float[]{0.15f, 0.06f, 0, -100.0f, -100.0f, -10.0f}, new float[][]{}),

@@ -274,7 +274,7 @@ public class FloatPropertyFactory {
 				if (selected instanceof SongBar) {
 					ScoreData score = selected.getScore();
 					return score != null
-							? ((float) score.getExscore()) / ((SongBar) selected).getSongData().getNotes() / 2
+							? ((float) score.getExscore()) / ((SongBar) selected).getSongData().getNotes() / 5
 							: 0;
 				}
 				if (selected instanceof GradeBar) {

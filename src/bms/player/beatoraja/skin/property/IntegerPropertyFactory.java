@@ -158,7 +158,7 @@ public class IntegerPropertyFactory {
 			return (state) -> (state.getScoreDataProperty().getNowScore());
 		case NUMBER_MAXSCORE:
 			return (state) -> (state.getScoreDataProperty().getScoreData() != null
-					? state.getScoreDataProperty().getScoreData().getNotes() * 2
+					? state.getScoreDataProperty().getScoreData().getNotes() * 5
 					: 0);
 		case NUMBER_DIFF_NEXTRANK:
 			return (state) -> (state.getScoreDataProperty().getNextRank());

@@ -144,6 +144,6 @@ public class IRScoreData {
 	}
 	
 	public int getExscore() {
-		return (epg + lpg) * 2 + egr + lgr;
+		return (epg + lpg) * 5 + (egr + lgr) * 3 + egd + lgd;
 	}
 }

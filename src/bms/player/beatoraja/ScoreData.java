@@ -393,7 +393,7 @@ public class ScoreData implements Validatable {
 	}
 
 	public int getExscore() {
-		return (epg + lpg) * 2 + egr + lgr;
+		return (epg + lpg) * 5 + (egr + lgr) * 3 + egd + lgd;
 	}
 	public int getRandom() {
 		return random;
