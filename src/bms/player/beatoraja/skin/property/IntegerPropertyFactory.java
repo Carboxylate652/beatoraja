@@ -1247,6 +1247,16 @@ public class IntegerPropertyFactory {
 			}
 			return Integer.MIN_VALUE;
 		}),
+		playertype_ranking1(380, createRankingPlayertypeProperty(0)),
+		playertype_ranking2(381, createRankingPlayertypeProperty(1)),
+		playertype_ranking3(382, createRankingPlayertypeProperty(2)),
+		playertype_ranking4(383, createRankingPlayertypeProperty(3)),
+		playertype_ranking5(384, createRankingPlayertypeProperty(4)),
+		playertype_ranking6(385, createRankingPlayertypeProperty(5)),
+		playertype_ranking7(386, createRankingPlayertypeProperty(6)),
+		playertype_ranking8(387, createRankingPlayertypeProperty(7)),
+		playertype_ranking9(388, createRankingPlayertypeProperty(8)),
+		playertype_ranking10(389, createRankingPlayertypeProperty(9)),
 		cleartype_ranking1(390, createRankinCleartypeProperty(0)),
 		cleartype_ranking2(391, createRankinCleartypeProperty(1)),
 		cleartype_ranking3(392, createRankinCleartypeProperty(2)),
@@ -1308,6 +1318,22 @@ public class IntegerPropertyFactory {
 		private IndexType(int id, IntegerProperty property) {
 			this.id = id;
 			this.property = property;
+		}
+
+		private static IntegerProperty createRankingPlayertypeProperty(int index) {
+			return (state) -> {
+				RankingData irc = null;
+				int rankingOffset = 0;
+				if (state instanceof MusicSelector) {
+					irc = ((MusicSelector) state).getCurrentRankingData();
+					rankingOffset = ((MusicSelector) state).getRankingOffset();
+				}
+				if (state instanceof AbstractResult) {
+					irc = ((AbstractResult) state).getRankingData();
+					rankingOffset = ((AbstractResult) state).getRankingOffset();
+				}
+				return irc != null ? irc.getPlayerType(index + rankingOffset) : Integer.MIN_VALUE;
+			};
 		}
 
 		private static IntegerProperty createRankinCleartypeProperty(int index) {
