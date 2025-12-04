@@ -283,7 +283,7 @@ public final class PlayerResource {
 	}
 	
 	public boolean setCourseBMSFiles(Path[] files) {
-		Array<BMSModel> models = new Array();
+		Array<BMSModel> models = new Array<BMSModel>();
 		for (Path f : files) {
 			BMSModel model = loadBMSModel(f, pconfig.getLnmode());
 			if (model == null) {

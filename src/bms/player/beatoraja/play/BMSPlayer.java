@@ -240,6 +240,7 @@ public class BMSPlayer extends MainState {
 						case BEAT_5K -> model.setMode(Mode.BEAT_10K);
 						case BEAT_7K -> model.setMode(Mode.BEAT_14K);
 						case KEYBOARD_24K -> model.setMode(Mode.KEYBOARD_24K_DOUBLE);
+						default -> {}
 					}
 					LaneShuffleModifier mod = new PlayerBattleModifier();
 					mod.modify(model);

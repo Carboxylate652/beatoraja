@@ -1,7 +1,7 @@
 package bms.player.beatoraja.play;
 
 import bms.player.beatoraja.MainState;
-import bms.player.beatoraja.SkinConfig;
+// import bms.player.beatoraja.SkinConfig;
 import bms.player.beatoraja.skin.*;
 import bms.player.beatoraja.skin.Skin.SkinObjectRenderer;
 

@@ -166,19 +166,9 @@ public class Config implements Validatable {
 
 	private static final String[] DEFAULT_TABLEURL = { "http://bmsnormal2.syuriken.jp/table.html",
 			"http://bmsnormal2.syuriken.jp/table_insane.html",
-			"http://walkure.net/hakkyou/for_glassist/bms/?lamp=easy",
-			"http://walkure.net/hakkyou/for_glassist/bms/?lamp=normal",
-			"http://walkure.net/hakkyou/for_glassist/bms/?lamp=hard",
-			"http://walkure.net/hakkyou/for_glassist/bms/?lamp=fc",
 			"https://stellabms.xyz/sl/table.html",
 			"https://stellabms.xyz/st/table.html",
-			"https://mocha-repository.info/table/dpn_header.json",
-			"https://mocha-repository.info/table/dpi_header.json",
-			"https://stellabms.xyz/dp/table.html",
-			"https://stellabms.xyz/dpst/table.html",
 			"https://mocha-repository.info/table/ln_header.json",
-			"https://pmsdifficulty.xxxxxxxx.jp/_pastoral_insane_table.html",
-			"https://excln.github.io/table24k/table.html",
 	};
 
 	public Config() {

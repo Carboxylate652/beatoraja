@@ -1,18 +1,18 @@
 package bms.player.beatoraja.play;
 
-import bms.player.beatoraja.MainController;
+// import bms.player.beatoraja.MainController;
 import bms.player.beatoraja.MainState;
 import bms.player.beatoraja.skin.Skin.SkinObjectRenderer;
 import bms.player.beatoraja.skin.SkinObject;
-import bms.player.beatoraja.skin.SkinSource;
-import bms.player.beatoraja.skin.SkinSourceImage;
+// import bms.player.beatoraja.skin.SkinSource;
+// import bms.player.beatoraja.skin.SkinSourceImage;
 
 import bms.player.beatoraja.skin.property.TimerProperty;
 import bms.player.beatoraja.skin.property.TimerPropertyFactory;
-import com.badlogic.gdx.graphics.Pixmap;
-import com.badlogic.gdx.graphics.Texture;
+// import com.badlogic.gdx.graphics.Pixmap;
+// import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.math.Rectangle;
+// import com.badlogic.gdx.math.Rectangle;
 
 import static bms.player.beatoraja.skin.SkinProperty.*;
 

@@ -1,6 +1,6 @@
 package bms.player.beatoraja.play;
 
-import bms.player.beatoraja.Resolution;
+// import bms.player.beatoraja.Resolution;
 import bms.player.beatoraja.skin.*;
 
 import com.badlogic.gdx.math.Rectangle;
