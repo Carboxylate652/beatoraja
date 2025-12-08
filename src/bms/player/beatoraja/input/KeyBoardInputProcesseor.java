@@ -31,7 +31,7 @@ public class KeyBoardInputProcesseor extends BMSPlayerInputDevice implements Inp
 	/**
 	 * 最後に押されたキー
 	 */
-	private int lastPressedKey = -1;
+	private int libgdxLastPressedKey = -1;
 
 	private boolean textmode = false;
 
@@ -77,7 +77,7 @@ public class KeyBoardInputProcesseor extends BMSPlayerInputDevice implements Inp
 	}
 
 	public boolean keyDown(int keycode) {
-		setLastPressedKey(keycode);
+		setLibgdxLastPresssedKey(keycode);
 		return true;
 	}
 
